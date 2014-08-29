@@ -1,0 +1,129 @@
+/*styling in css*/
+
+body {
+  font-family: cursive;
+  background-image: url("../img/1.jpeg");
+ /* background-color: #ff00f0;*/
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.left {
+  background: #DCDCDC;
+  opacity: .4;
+  width: 250px;
+  height: 100%;
+  float: left;
+  text-align: center;
+  color: #0000ff;
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right {
+  background: #DCDCDC;
+  opacity: .4;
+  width: 250px;
+  height: 100%;
+/*  background-image: url('../img/p2.jpeg');
+  background-repeat: no-repeat;*/
+  float: right;
+  text-align: center;
+  color: #0000ff;
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.board {
+  width: 468px;
+  height: 468px;
+  margin: 0 auto;
+}
+
+.innerbox {
+  color: #00ff00;
+  text-align: center;
+  line-height: 125px;
+  font-size: 100px;
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-color: #FFF8DC;
+  margin: 3px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.innerbox:hover {
+  background-color: #DEB887;
+}
+
+.clear {
+  clear: both;
+}
+
+#left_message, #right_message {
+  margin-top: 130px;
+  color: #000000;
+}
+
+#p1_name:hover, #p2_name:hover {
+  cursor: pointer;
+  color: #000000;
+  font-family: Helvetica;
+}
+
+#p1_name, #p2_name {
+  background-color: #00ffff;
+  color: #0000ff;
+  border: none;
+  text-align: center;
+  font-family: cursive;
+  font-size: 32px;
+  width: 180px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.reset {
+  width: 250px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #7e3f3f;
+  float: clear;
+  margin: 450px auto 0px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.reset:hover {
+  background-color: #00ffff;
+  cursor: pointer;
+  color: #000000;
+}
+
+.x_class {
+    width: 150px;
+    height: 150px;
+    background: url('../img/GodOfWar.jpg') 0 0;
+  }
+
+.o_class {
+  width: 150px;
+  height: 150px;
+  background: url('../img/p2.jpeg') 0 0;
+}
