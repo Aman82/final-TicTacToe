@@ -2,13 +2,28 @@
 
 var tttApp = angular.module('tttApp', ['firebase']);
 tttApp.controller('tttCtrl', ['$scope', '$firebase', function($scope, $firebase){
-$scope.cells2 = {cells:['','','','','','','','','']};
-var ref = $firebase (new Firebase("https://turnapp.firebaseio.com/data"));
-ref.$bind($scope,"cells2");
+$scope.cells2 = {cells:['','','','','','','','',''], currentMark : 'o'};
+var tttDetails = $firebase (new Firebase("https://turnapp.firebaseio.com/data"));
+
+//tttDetails.$asObject().$bindTo($scope, 'tttDetails');
+
+tttDetails.$bind($scope,"cells2");
 $scope.$watch('cells2', function(){
-console.log('Hello!');
+
 });
-  var currentMark = 'o';
+
+
+// // Dealing with an Object  
+// var firebase = new Firebase("https://turnapp.firebaseio.com/ttt")
+// var tttDetails = $firebase(firebase);
+// var tttDetailsObject = tttDetails.asObject();
+// tttDetailsObject.$bindTo($scope, 'tttDetails');
+
+// var tttDetails = $firebase(new Firebase("https://turnapp.firebaseio.com/"));
+// tttDetails.$asObject().$bindTo($scope, 'tttDetails');
+
+
+  // var currentMark = 'o';
   var empty = true;
   moves = 1;
   gameover = false;
@@ -23,17 +38,17 @@ console.log('Hello!');
 // Drawing Markers for Player1 and two
   $scope.drawMark = function($index) {
     if (gameover == false && $scope.cells2.cells[$index] == '') {
-      if (currentMark == 'o') {
+      if ($scope.cells2.currentMark == 'o') {
         $scope.cells2.cells[$index] = 'x';
-        currentMark = 'x';
+        $scope.cells2.currentMark = 'x';
       } else {
         $scope.cells2.cells[$index] = 'o';
-        currentMark = 'o';
+        $scope.cells2.currentMark = 'o';
       }
     }
     var row = Math.floor($index/3);
     var column = ($index % 3);
-    grid[row][column] = currentMark;
+    grid[row][column] = $scope.cells2.currentMark;
     if (gameover == false) evaluateWin();
   }
 // Winning Logic!
@@ -118,7 +133,7 @@ console.log('Hello!');
     }
     $scope.leftMessage = "";
     $scope.rightMessage = "";
-    currentMark = 'o';
+    $scope.cells2.currentMark = 'o';
     var empty = true;
     moves = 1;
     gameover = false;

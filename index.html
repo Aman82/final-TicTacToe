@@ -30,16 +30,16 @@
         <p id="right_message">{{rightMessage}}</p>
     </div>
 
+
     <div class="board">
         <h1>Tic Tac Toe</h1>
-        <div class="innerbox" ng-repeat="cell in cells2.cells track by $index" ng-click="drawMark($index)"
+    <div class="innerbox" ng-repeat="cell in cells2.cells track by $index" ng-click="drawMark($index)"
         ng-class="{x_class: cells2.cells[$index]=='x', o_class: cells2.cells[$index]=='o'}">
         {{cell}}
-        </div>
-       <br />
-       <div class="reset" ng-click="clearBoard()">New Game</div>
     </div>
-
+    <br/>
+    <div class="reset" ng-click="clearBoard()">New Game</div>
+   </div>
   </body>
 
 </html>

@@ -1,0 +1,9 @@
+{
+  "firebase": "turnapp",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
